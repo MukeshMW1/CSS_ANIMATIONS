@@ -1,0 +1,226 @@
+/* body
+{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+} */
+
+.sky
+{
+    background-color: skyblue;
+    width:100vw;
+    height:100px;
+}
+.grass
+{
+    background-color: green;
+    width:100vw;
+    height:100px;
+}
+.road
+{
+    height: 10px;
+    width:800px;
+    background-color: gray;
+    
+
+}
+
+
+
+
+
+.box
+{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    animation-name:moveRotate  ;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.box1
+{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    /* transition-property: transform ,scale;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out; */
+    /* transition: transform 2s ease-in-out,scale 1ms ease,background-color 1s linear; */
+    transition: all 2s 0s ease-out ;
+}
+
+.box1:hover{
+transform: rotate(145deg) scale(1.5) translateX(10vw);
+background-color: green;
+
+
+}
+
+
+.bike
+{
+    animation: bike 3s ease infinite;
+    
+    
+}
+
+
+.box2
+{
+    background-color: yellowgreen;
+    width:200px;
+    height:200px;
+    /* animation-name: boxing;
+animation-duration: 2s;
+animation-timing-function:ease-in-out;
+animation-delay:2s;
+animation-iteration-count:infinite;
+animation-direction:alternate ;
+animation-fill-mode: backwards; */
+/* animation-play-state:paused; */
+animation: boxing 1s ease-in-out 2s infinite alternate;
+    
+}
+
+.box2:hover{
+    animation-play-state: paused;
+}
+
+
+
+
+
+.loader{
+    width: 50px;
+    height: 50px;
+    border:5px solid cyan;
+    border-radius: 5px;
+    box-shadow:0 0 8px cyan, 0 0 8px cyan inset;
+    animation: loading 2s infinite ease-in;
+
+}
+
+
+
+.scroll-element{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:80px;
+}
+
+.block1
+{
+    width: 180px;
+    height: 100px;
+    background-color: green;
+}
+.block2
+{
+    width: 210px;
+    height: 100px;
+    background-color: yellow;
+}
+.block3
+{
+    width: 220px;
+    height: 100px;
+    background-color: yellowgreen;
+}
+.block4
+{
+    width: 200px;
+    height: 100px;
+    background-color: black;
+}
+
+.block{
+   animation: scrolling 2s  linear  ;
+   animation-timeline: view();
+   animation-range: entry 0% cover 50%;
+}
+
+
+
+@keyframes scrolling {
+    
+    from{
+         transform:translateX(-150px);
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+            }
+    
+    to{
+        transform:translateX(0);
+opacity: 1;
+clip-path: inset(0 0 0 0);
+
+    }
+  
+}
+
+@keyframes loading{
+    0%{
+
+        transform:rotateX(0deg) rotateY(0deg)  rotateZ(0deg)
+    }
+    50%{
+        transform:rotateX(180deg) rotateY(0deg)  rotateZ(0deg)
+    }
+    77%{
+         transform:rotateX(180deg) rotateY(180deg)  rotateZ(0deg)
+    }
+    100%{
+        transform:rotateX(180deg) rotateY(180deg)  rotateZ(180deg)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes bike {
+    to{
+        transform:translate(-40vw) rotate(45deg) scale(4);
+    }
+    
+}
+
+
+@keyframes  moveRotate{
+from {
+    transform: translateX(0)  rotate(0deg) (0) ;
+}
+
+to{
+   
+    
+    transform:translateX(-30vw) rotate(360deg) scale(1) skew(45deg);
+
+}
+}
+
+
+@keyframes boxing {
+    from{
+        transform: translateY(0) rotate(0deg);
+    }
+    to{
+transform: translateY(-100px) rotate(135deg);
+    }
+}
